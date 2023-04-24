@@ -57,14 +57,14 @@ function filter(arrayOfStrings) {
 newArray = []; 
    
    for (var i = 0; i < arrayOfStrings.length; i++) {
-   	if (arrayOfStrings[i][0] === letter ) {
+   	if (arrayOfStrings[i][0] === "a" ||arrayOfStrings[i][0] === "A" ) {
    		
    		newArray.push(arrayOfStrings[i])
    	} 	
    }
    return newArray
  }
-}
+
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {

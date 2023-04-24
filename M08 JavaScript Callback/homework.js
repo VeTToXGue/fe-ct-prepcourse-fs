@@ -19,6 +19,7 @@ function invocarCallback(cb) {
   // Invoca/ejecuta el callback `cb`.
   // [NOTA]: no debes reotrnar nada.
   // Tu código:
+  return cb();
 }
 
 function operacionMatematica(num1, num2, cb) {
@@ -26,6 +27,7 @@ function operacionMatematica(num1, num2, cb) {
   // El callback realiza una operación matemática, por lo que necesita de los dos números.
   // Retorna el resultado del callback pasándole como parámetros los números.
   // Tu código:
+  return cb(num1, num2);
 }
 
 function sumarArray(arrayOfNumbers, cb) {
@@ -34,6 +36,13 @@ function sumarArray(arrayOfNumbers, cb) {
   // Este resultado debes pasárselo como argumento al callback recibido.
   // [NOTA]: no debes reotrnar nada.
   // Tu código:
+  let sumNumbers = 0;
+
+  for (var i = 0; i < arrayOfNumbers.length; i++) {
+    sumNumbers += arrayOfNumbers[i];
+  }
+ cb(sumNumbers);
+
 }
 
 function forEach(array, cb) {
@@ -41,6 +50,9 @@ function forEach(array, cb) {
   // Debes iterar sobre el arreglo, y por cada elemento ejecutar el callback.
   // Debes pasarle el elemento como argumento al callback.
   // Tu código:
+  for (var i = 0; i < array.length;i++) {
+    cb(array[i]);
+  }
 }
 
 function map(array, cb) {
@@ -48,6 +60,11 @@ function map(array, cb) {
   // Tiene que guardar el resultado devuelto por el callback en cada elemento dentro de un nuevo arreglo.
   // Retorna el nuevo arreglo.
   // Tu código:
+  var newArray = [];
+  for (var i = 0; i < array.length; i++) {
+    newArray.push(cb(array[i]));
+  }
+  return newArray; 
 }
 
 function filter(arrayOfStrings) {

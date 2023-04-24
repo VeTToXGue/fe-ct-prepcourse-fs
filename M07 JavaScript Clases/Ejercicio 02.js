@@ -29,7 +29,7 @@ function crearInstanciaPersona(nombre, apellido, edad, domicilio) {
    // Retornar la instancia creada.
    // Tu código:
 
-   var miPrimeraPersona = new Persona("Pedro", "Carrillo", 23, "Cll 126  No 13-25 Bogotá")
+   var miPrimeraPersona = new Persona(nombre, apellido, edad, domicilio)
    return miPrimeraPersona
    
 }
@@ -42,7 +42,7 @@ function agregarMetodo() {
    Persona.prototype.datos = function () {
       return `${this.nombre}, ${this.edad} años`
    }
-   var newPerson = new Persona ("Juan", "Otalora", 22, "Cll 126  No 13-25 Bogotá");
+   var newPerson = new Persona ("Edgar", "Perez", 27, "casa"); 
 
    return newPerson.datos()
 

@@ -19,6 +19,7 @@ function invocarCallback(cb) {
   // Invoca/ejecuta el callback `cb`.
   // [NOTA]: no debes reotrnar nada.
   // Tu código:
+cb();
 }
 
 function operacionMatematica(num1, num2, cb) {

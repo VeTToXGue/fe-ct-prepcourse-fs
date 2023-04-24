@@ -22,6 +22,16 @@ function capToFront(string) {
   // Retornar el string.
   // [EJEMPLO]: soyHENRY ---> HENRYsoy
   // Tu código:
+  var left = [];
+  var rigth = [];
+  for (var i = 0; i < string.length; i++) {
+    if (string[i] === string[i].toUpperCase()) {
+      rigth.push(string[i]);
+    } else if (string[i] !== string[i].toUpperCase()) {
+      left.push(string[i]);
+    }
+  }
+  return rigth.join("") + left.join("");
 }
 
 function asAmirror(frase) {
@@ -35,12 +45,32 @@ function capicua(numero) {
   // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
   // Caso contrario: "No es capicua".
   // Tu código:
+  var numToString = numero.toString();
+  izq = [];
+  der = [];
+
+  for (
+    var i = 0, j = numToString.length - 1;
+    i < numToString.length && j >= 0;
+    i++, j--
+  ) {
+    izq.push(numToString[i]);
+    der.push(numToString[j]);
+  }
+  return izq.join("") === der.join("") ? "Es capicua" : "No es capicua";
 }
 
 function deleteAbc(string) {
   // Tu tarea es eliminar las letras "a", "b" y "c" del string recibido.
   // Retorna el string sin estas letras.
   // Tu código:
+  newArray = [];
+  for (var i = 0; i < string.length; i++) {
+    if (string[i] !== "a" && string[i] !== "b" && string[i] !== "c") {
+      newArray.push(string[i]);
+    }
+  }
+  return newArray.join("");
 }
 
 function sortArray(arrayOfStrings) {

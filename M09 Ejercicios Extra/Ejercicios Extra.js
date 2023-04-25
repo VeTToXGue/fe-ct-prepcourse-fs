@@ -6,6 +6,12 @@ function deObjetoAarray(objeto) {
   // Estos elementos debe ser cada par clave:valor del objeto recibido.
   // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
   // Tu código:
+  newArray = [];
+  var keys = Object.keys(objeto);
+  for (var i = 0; i < keys.length; i++) {
+    newArray.push([keys[i], objeto[keys[i]]]);
+  }
+  return newArray;
 }
 
 function numberOfCharacters(string) {
@@ -14,6 +20,12 @@ function numberOfCharacters(string) {
   // Las letras deben estar en orden alfabético.
   // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
   // Tu código:
+  var object = {};
+  var array = string.split("").sort();
+  for (var i = 0; i < array.length; i++) {
+    array[i] in object ? object[array[i]]++ : (object[array[i]] = 1);
+  }
+  return object;
 }
 
 function capToFront(string) {
@@ -39,6 +51,12 @@ function asAmirror(frase) {
   // La diferencia es que cada palabra estará escrita al inverso.
   // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
   // Tu código:
+  var array = frase.split(" ");
+  var result = [];
+  array.forEach((string) => {
+    result.push(string.split("").reverse().join(""));
+  });
+  return result.join(" ");
 }
 
 function capicua(numero) {
@@ -79,7 +97,10 @@ function sortArray(arrayOfStrings) {
   // de la longitud de cada string.
   // [EJEMPLO]: ["You", "are", "beautiful", "looking"]  ---> [“You", "are", "looking", "beautiful"]
   // Tu código:
+  return arrayOfStrings.sort((a,b)=> a.length - b.length);
+  
 }
+
 
 function buscoInterseccion(array1, array2) {
   // Recibes dos arreglos de números.
@@ -88,7 +109,19 @@ function buscoInterseccion(array1, array2) {
   // Si no tienen elementos en común, retornar un arreglo vacío.
   // [PISTA]: los arreglos no necesariamente tienen la misma longitud.
   // Tu código:
-}
+  if (array1.length >= array2.lenght) { 
+    var starArray = array2;
+      var compareArray = array1;
+    } starArray = array1;
+      compareArray = array2
+      var arrayToShow = [];
+    for (var i = 0; i < starArray.length; i++) {
+     if (compareArray.includes(starArray[i])) {
+       arrayToShow.push(starArray[i])
+     }
+    }
+      return arrayToShow;
+    }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
 module.exports = {
